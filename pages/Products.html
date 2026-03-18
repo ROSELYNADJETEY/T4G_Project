@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products — Mingle and Glow Cosmetics</title>
+  <link rel="stylesheet" href="../src/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html">
+        <img class="logo" src="../images/logo.png" alt="Mingle and Glow logo" />
+      </a>
+      <nav class="main-nav">
+        <a href="../index.html">Home</a>
+        <a href="About%20us%20.html">About Us</a>
+        <a href="Products.html" class="active">Products</a>
+        <a href="Skin%20Quiz%20.html">Skin Quiz</a>
+        <a href="Contact%20us%20.html">Contact Us</a>
+        <a id="auth-action" class="btn btn-primary" href="Sign%20In.html">Sign In</a>
+        <span id="user-greeting" class="user-greeting"></span>
+        <a class="btn cart-link" href="Cart.html">Cart <span id="cart-count" class="badge">0</span></a>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <section class="page-header">
+      <div class="container">
+        <h1>Shop Our Products</h1>
+        <p>Explore skincare and perfume collections with filters that help you find what’s right for you.</p>
+      </div>
+    </section>
+
+    <section class="product-filters">
+      <div class="container filter-grid">
+        <div class="filter">
+          <label for="filter-category">Product Category</label>
+          <select id="filter-category" class="filter-select"></select>
+        </div>
+        <div class="filter">
+          <label for="filter-skin-type">Skin Type</label>
+          <select id="filter-skin-type" class="filter-select"></select>
+        </div>
+        <div class="filter">
+          <label for="filter-fragrance-type">Fragrance Type</label>
+          <select id="filter-fragrance-type" class="filter-select"></select>
+        </div>
+        <div class="filter">
+          <label for="filter-brand">Brand</label>
+          <select id="filter-brand" class="filter-select"></select>
+        </div>
+        <div class="filter">
+          <label for="filter-price">Price Range</label>
+          <select id="filter-price" class="filter-select">
+            <option value="All">All Prices</option>
+            <option value="0-25">Under $25</option>
+            <option value="25-45">$25–45</option>
+            <option value="45-100">$45+</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section class="products-grid">
+      <div class="container">
+        <div id="product-list" class="product-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Mingle and Glow Cosmetics</h3>
+        <p>Bringing you personalized skincare and inclusive fragrances for every story.</p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="About%20us%20.html">About</a></li>
+          <li><a href="Contact%20us%20.html">Contact</a></li>
+          <li><a href="Products.html">Shop</a></li>
+          <li><a href="Skin%20Quiz%20.html">Skin Quiz</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Connect</h4>
+        <p>Email: <a href="mailto:support@mingleandglow.com">support@mingleandglow.com</a></p>
+        <p>Phone: +233 545 850 757</p>
+        <div class="social-icons">
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Twitter">🐦</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Mingle and Glow Cosmetics. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../src/app.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    updateCartBadge();
+  </script>
+</body>
+</html>

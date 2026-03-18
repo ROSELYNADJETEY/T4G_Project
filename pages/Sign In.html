@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In — Mingle and Glow Cosmetics</title>
+  <link rel="stylesheet" href="../src/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html">
+        <img class="logo" src="../images/logo.png" alt="Mingle and Glow logo" />
+      </a>
+      <nav class="main-nav">
+        <a href="../index.html">Home</a>
+        <a href="About%20us%20.html">About Us</a>
+        <a href="Products.html">Products</a>
+        <a href="Skin%20Quiz%20.html">Skin Quiz</a>
+        <a href="Contact%20us%20.html">Contact Us</a>
+        <a id="auth-action" class="btn btn-primary" href="Sign%20In.html">Sign In</a>
+        <span id="user-greeting" class="user-greeting"></span>
+        <a class="btn cart-link" href="Cart.html">Cart <span id="cart-count" class="badge">0</span></a>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <section class="auth-section">
+      <div class="container auth-grid">
+        <div class="auth-card">
+          <h1>Sign In</h1>
+          <p>Welcome back! Enter your credentials to access your account.</p>
+
+          <form id="sign-in-form" class="auth-form">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required />
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input id="password" name="password" type="password" required />
+            </div>
+            <div class="form-group checkbox">
+              <label>
+                <input type="checkbox" name="remember" /> Remember Me
+              </label>
+            </div>
+            <button class="btn btn-primary" type="submit">Sign In</button>
+            <p class="auth-links">
+              <a href="#">Forgot Password?</a>
+              <span>•</span>
+              <a href="Sign%20up.html">Create Account</a>
+            </p>
+            <p id="auth-message" class="message"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Mingle and Glow Cosmetics</h3>
+        <p>Bringing you personalized skincare and inclusive fragrances for every story.</p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="About%20us%20.html">About</a></li>
+          <li><a href="Contact%20us%20.html">Contact</a></li>
+          <li><a href="Products.html">Shop</a></li>
+          <li><a href="Skin%20Quiz%20.html">Skin Quiz</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Connect</h4>
+        <p>Email: <a href="mailto:support@mingleandglow.com">support@mingleandglow.com</a></p>
+        <p>Phone: +233 545 850 757</p>
+        <div class="social-icons">
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Twitter">🐦</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Mingle and Glow Cosmetics. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../src/app.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    updateCartBadge();
+  </script>
+</body>
+</html>

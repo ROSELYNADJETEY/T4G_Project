@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us — Mingle and Glow Cosmetics</title>
+  <link rel="stylesheet" href="../src/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html">
+        <img class="logo" src="../images/logo.png" alt="Mingle and Glow logo" />
+      </a>
+      <nav class="main-nav">
+        <a href="../index.html">Home</a>
+        <a href="About%20us%20.html">About Us</a>
+        <a href="Products.html">Products</a>
+        <a href="Skin%20Quiz%20.html">Skin Quiz</a>
+        <a href="Contact%20us%20.html" class="active">Contact Us</a>
+        <a id="auth-action" class="btn btn-primary" href="Sign%20In.html">Sign In</a>
+        <span id="user-greeting" class="user-greeting"></span>
+        <a class="btn cart-link" href="Cart.html">Cart <span id="cart-count" class="badge">0</span></a>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <section class="page-header">
+      <div class="container">
+        <h1>Contact Us</h1>
+        <p>Questions? We’re here to help. Send us a message and we’ll reply within 24 hours.</p>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="container contact-grid">
+        <div class="contact-details">
+          <h2>Get in Touch</h2>
+          <p><strong>Email:</strong> <a href="mailto:support@mingleandglow.com">support@mingleandglow.com</a></p>
+          <p><strong>Phone:</strong> +233 545 850 757</p>
+          <p><strong>Address:</strong> Mingle and Glow Cosmetics Beauty Center</p>
+          <p class="privacy-note">We take your privacy seriously. Your information will never be shared without your consent.</p>
+        </div>
+
+        <form id="contact-form" class="contact-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Send Message</button>
+          <p id="contact-feedback" class="message"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Mingle and Glow Cosmetics</h3>
+        <p>Bringing you personalized skincare and inclusive fragrances for every story.</p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="About%20us%20.html">About</a></li>
+          <li><a href="Contact%20us%20.html">Contact</a></li>
+          <li><a href="Products.html">Shop</a></li>
+          <li><a href="Skin%20Quiz%20.html">Skin Quiz</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Connect</h4>
+        <p>Email: <a href="mailto:support@mingleandglow.com">support@mingleandglow.com</a></p>
+        <p>Phone: +233 545 850 757</p>
+        <div class="social-icons">
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Twitter">🐦</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Mingle and Glow Cosmetics. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../src/app.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    updateCartBadge();
+
+    document.getElementById('contact-form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      document.getElementById('contact-feedback').textContent = 'Thanks for reaching out! We will be in touch soon.';
+      document.getElementById('contact-form').reset();
+    });
+  </script>
+</body>
+</html>

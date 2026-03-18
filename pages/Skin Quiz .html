@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skin Quiz — Mingle and Glow Cosmetics</title>
+  <link rel="stylesheet" href="../src/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html">
+        <img class="logo" src="../images/logo.png" alt="Mingle and Glow logo" />
+      </a>
+      <nav class="main-nav">
+        <a href="../index.html">Home</a>
+        <a href="About%20us%20.html">About Us</a>
+        <a href="Products.html">Products</a>
+        <a href="Skin%20Quiz%20.html" class="active">Skin Quiz</a>
+        <a href="Contact%20us%20.html">Contact Us</a>
+        <a id="auth-action" class="btn btn-primary" href="Sign%20In.html">Sign In</a>
+        <span id="user-greeting" class="user-greeting"></span>
+        <a class="btn cart-link" href="Cart.html">Cart <span id="cart-count" class="badge">0</span></a>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <section class="page-header">
+      <div class="container">
+        <h1>Find Your Skin Type</h1>
+        <p>Answer a few simple questions to discover your skin type and see product recommendations tailored just for you.</p>
+      </div>
+    </section>
+
+    <section class="quiz-section">
+      <div class="container quiz-grid">
+        <form id="quiz-form" class="quiz-form">
+          <div class="quiz-card">
+            <h2>1. How does your skin feel after washing your face?</h2>
+            <label><input type="radio" name="q1" value="Tight/dry" required /> Tight/dry</label>
+            <label><input type="radio" name="q1" value="Normal" /> Normal</label>
+            <label><input type="radio" name="q1" value="Oily" /> Oily</label>
+            <label><input type="radio" name="q1" value="Combination" /> Combination</label>
+          </div>
+
+          <div class="quiz-card">
+            <h2>2. How often does your skin get oily?</h2>
+            <label><input type="radio" name="q2" value="Rarely" required /> Rarely</label>
+            <label><input type="radio" name="q2" value="Sometimes" /> Sometimes</label>
+            <label><input type="radio" name="q2" value="Frequently" /> Frequently</label>
+          </div>
+
+          <div class="quiz-card">
+            <h2>3. Do you experience acne or breakouts?</h2>
+            <label><input type="radio" name="q3" value="Often" required /> Often</label>
+            <label><input type="radio" name="q3" value="Sometimes" /> Sometimes</label>
+            <label><input type="radio" name="q3" value="Rarely" /> Rarely</label>
+          </div>
+
+          <div class="quiz-card">
+            <h2>4. How sensitive is your skin?</h2>
+            <label><input type="radio" name="q4" value="Very" required /> Very</label>
+            <label><input type="radio" name="q4" value="Slightly" /> Slightly</label>
+            <label><input type="radio" name="q4" value="Not sensitive" /> Not sensitive</label>
+          </div>
+
+          <div class="quiz-actions">
+            <button class="btn btn-primary" type="submit">See My Results</button>
+          </div>
+        </form>
+
+        <div id="quiz-result" class="quiz-result"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Mingle and Glow Cosmetics</h3>
+        <p>Bringing you personalized skincare and inclusive fragrances for every story.</p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="About%20us%20.html">About</a></li>
+          <li><a href="Contact%20us%20.html">Contact</a></li>
+          <li><a href="Products.html">Shop</a></li>
+          <li><a href="Skin%20Quiz%20.html">Skin Quiz</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Connect</h4>
+        <p>Email: <a href="mailto:support@mingleandglow.com">support@mingleandglow.com</a></p>
+        <p>Phone: +233 545 850 757</p>
+        <div class="social-icons">
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Twitter">🐦</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Mingle and Glow Cosmetics. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../src/app.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    updateCartBadge();
+  </script>
+</body>
+</html>

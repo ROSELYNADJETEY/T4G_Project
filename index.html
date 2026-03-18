@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mingle and Glow Cosmetics</title>
+  <link rel="stylesheet" href="src/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img class="logo" src="images/logo.png" alt="Mingle and Glow logo" />
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="pages/About%20us%20.html">About Us</a>
+        <a href="pages/Products.html">Products</a>
+        <a href="pages/Skin%20Quiz%20.html">Skin Quiz</a>
+        <a href="pages/Contact%20us%20.html">Contact Us</a>
+        <a id="auth-action" class="btn btn-primary" href="pages/Sign%20In.html">Sign In</a>
+        <span id="user-greeting" class="user-greeting"></span>
+        <a class="btn cart-link" href="pages/Cart.html">Cart <span id="cart-count" class="badge">0</span></a>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>Discover Your Perfect Skin Care Routine with Mingle and Glow</h1>
+          <p>Take our personalized skin quiz to get customized recommendations for your unique skin type.  <br>  and explore our premium  collection of unisex fragrances.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="pages/Skin%20Quiz%20.html">Take Skin Quiz</a>
+            <a class="btn btn-secondary" href="pages/Products.html">Shop Now</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <!-- <img src="images/hero-image.jpeg" alt="" /> -->
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <h2>Why Choose Mingle and Glow</h2>
+        <div class="feature-grid">
+          <article class="feature">
+            <h3>Skin Type Analysis</h3>
+            <p>Answer a few quick questions and discover your skin type so you can build a routine that works.</p>
+          </article>
+          <article class="feature">
+            <h3>Personalized Suggestions</h3>
+            <p>Get curated product recommendations and a step-by-step routine tailored to your needs.</p>
+          </article>
+          <article class="feature">
+            <h3>Trusted Products</h3>
+            <p>We highlight clean, effective, and inclusive formulas backed by experts.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-fragrances">
+      <div class="container">
+        <div class="section-header">
+          <h2>Discover Your Signature Scent</h2>
+          <p>Explore our premium unisex perfume collection—fresh, floral, woody, and citrus notes designed for everyone.</p>
+        </div>
+
+        <div class="product-grid" id="featured-fragrances">
+          <article class="product-card">
+            <img src="https://via.placeholder.com/320x240?text=Fresh+Citrus+Glow" alt="Fresh Citrus Glow" />
+            <div class="product-body">
+              <h3>Fresh Citrus Glow</h3>
+              <p>Light and refreshing citrus notes that brighten your day.</p>
+              <button class="btn btn-primary" onclick="addToCart('perfume-citrus-glow')">Add to Cart</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="https://via.placeholder.com/320x240?text=Velvet+Rose+Mist" alt="Velvet Rose Mist" />
+            <div class="product-body">
+              <h3>Velvet Rose Mist</h3>
+              <p>Floral elegance with rose and musk for a romantic touch.</p>
+              <button class="btn btn-primary" onclick="addToCart('perfume-velvet-rose')">Add to Cart</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="https://via.placeholder.com/320x240?text=Ocean+Breeze" alt="Ocean Breeze" />
+            <div class="product-body">
+              <h3>Ocean Breeze</h3>
+              <p>Clean, aquatic scent inspired by sea air.</p>
+              <button class="btn btn-primary" onclick="addToCart('perfume-ocean-breeze')">Add to Cart</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="https://via.placeholder.com/320x240?text=Golden+Amber" alt="Golden Amber" />
+            <div class="product-body">
+              <h3>Golden Amber</h3>
+              <p>Warm and luxurious amber with sandalwood depth.</p>
+              <button class="btn btn-primary" onclick="addToCart('perfume-golden-amber')">Add to Cart</button>
+            </div>
+          </article>
+        </div>
+
+        <div class="section-actions">
+          <a class="btn btn-secondary" href="pages/Products.html">Explore Perfumes</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="popular-products">
+      <div class="container">
+        <div class="section-header">
+          <h2>Popular Skincare Picks</h2>
+          <p>Top-rated skincare favorites that support healthy, glowing skin.</p>
+        </div>
+
+        <div class="product-grid" id="popular-skincare">
+          <!-- Filled by JS -->
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="container">
+        <h2>What Customers Say</h2>
+        <div class="testimonial-grid">
+          <article class="testimonial">
+            <p>“I finally understand my skin type—my routine has never felt this effortless. The fragrance picks are a huge plus!”</p>
+            <footer>- Amina</footer>
+          </article>
+          <article class="testimonial">
+            <p>“The skin quiz pointed me to products that actually work. The unisex perfumes are beautiful and long-lasting.”</p>
+            <footer>- Jordan</footer>
+          </article>
+          <article class="testimonial">
+            <p>“Shopping feels easy and confident. Love the combo of skincare & scent all in one place.”</p>
+            <footer>- Priya</footer>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Mingle and Glow Cosmetics</h3>
+        <p>Bringing you personalized skincare and inclusive fragrances for every story.</p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="pages/About%20us%20.html">About</a></li>
+          <li><a href="pages/Contact%20us%20.html">Contact</a></li>
+          <li><a href="pages/Products.html">Shop</a></li>
+          <li><a href="pages/Skin%20Quiz%20.html">Skin Quiz</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Connect</h4>
+        <p>Email: <a href="mailto:support@mingleandglow.com">support@mingleandglow.com</a></p>
+        <p>Phone: +233 545 850 757</p>
+        <div class="social-icons">
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Twitter">🐦</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Mingle and Glow Cosmetics. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="src/app.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    updateCartBadge();
+    renderPopularSkincare();
+  </script>
+</body>
+</html>
