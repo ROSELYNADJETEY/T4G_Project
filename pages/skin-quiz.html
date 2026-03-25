@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us — Mingle and Glow Cosmetics</title>
+  <title>Skin Quiz — Mingle and Glow Cosmetics</title>
   <link rel="stylesheet" href="../src/style.css" />
 </head>
 <body>
@@ -14,11 +14,11 @@
       </a>
       <nav class="main-nav">
         <a href="../index.html">Home</a>
-        <a href="About%20us%20.html">About Us</a>
+        <a href="about-us.html">About Us</a>
         <a href="Products.html">Products</a>
-        <a href="Skin%20Quiz%20.html">Skin Quiz</a>
-        <a href="Contact%20us%20.html" class="active">Contact Us</a>
-        <a id="auth-action" class="btn btn-primary" href="Sign%20In.html">Sign In</a>
+        <a href="skin-quiz.html" class="active">Skin Quiz</a>
+        <a href="contact-us.html">Contact Us</a>
+        <a id="auth-action" class="btn btn-primary" href="sign-in.html">Sign In</a>
         <span id="user-greeting" class="user-greeting"></span>
         <a class="btn cart-link" href="Cart.html">Cart <span id="cart-count" class="badge">0</span></a>
       </nav>
@@ -29,41 +29,49 @@
   <main class="page-content">
     <section class="page-header">
       <div class="container">
-        <h1>Contact Us</h1>
-        <p>Questions? We’re here to help. Send us a message and we’ll reply within 24 hours.</p>
+        <h1>Find Your Skin Type</h1>
+        <p>Answer a few simple questions to discover your skin type and see product recommendations tailored just for you.</p>
       </div>
     </section>
 
-    <section class="contact-section">
-      <div class="container contact-grid">
-        <div class="contact-details">
-          <h2>Get in Touch</h2>
-          <p><strong>Email:</strong> <a href="mailto:support@mingleandglow.com">support@mingleandglow.com</a></p>
-          <p><strong>Phone:</strong> +233 545 850 757</p>
-          <p><strong>Address:</strong> Mingle and Glow Cosmetics Beauty Center</p>
-          <p class="privacy-note">We take your privacy seriously. Your information will never be shared without your consent.</p>
-        </div>
+    <section class="quiz-section">
+      <div class="container quiz-grid">
+        <form id="quiz-form" class="quiz-form">
+          <div class="quiz-card">
+            <h2>1. How does your skin feel after washing your face?</h2>
+            <label><input type="radio" name="q1" value="Tight/dry" required /> Tight/dry</label>
+            <label><input type="radio" name="q1" value="Normal" /> Normal</label>
+            <label><input type="radio" name="q1" value="Oily" /> Oily</label>
+            <label><input type="radio" name="q1" value="Combination" /> Combination</label>
+          </div>
 
-        <form id="contact-form" class="contact-form">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required />
+          <div class="quiz-card">
+            <h2>2. How often does your skin get oily?</h2>
+            <label><input type="radio" name="q2" value="Rarely" required /> Rarely</label>
+            <label><input type="radio" name="q2" value="Sometimes" /> Sometimes</label>
+            <label><input type="radio" name="q2" value="Frequently" /> Frequently</label>
           </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required />
+
+          <div class="quiz-card">
+            <h2>3. Do you experience acne or breakouts?</h2>
+            <label><input type="radio" name="q3" value="Often" required /> Often</label>
+            <label><input type="radio" name="q3" value="Sometimes" /> Sometimes</label>
+            <label><input type="radio" name="q3" value="Rarely" /> Rarely</label>
           </div>
-          <div class="form-group">
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" required />
+
+          <div class="quiz-card">
+            <h2>4. How sensitive is your skin?</h2>
+            <label><input type="radio" name="q4" value="Very" required /> Very</label>
+            <label><input type="radio" name="q4" value="Slightly" /> Slightly</label>
+            <label><input type="radio" name="q4" value="Not sensitive" /> Not sensitive</label>
           </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
+
+          <div class="quiz-actions">
+            <button class="btn btn-primary" type="submit">See My Results</button>
           </div>
-          <button class="btn btn-primary" type="submit">Send Message</button>
-          <p id="contact-feedback" class="message"></p>
         </form>
+
+        <div id="quiz-result" class="quiz-result"></div>
       </div>
     </section>
   </main>
@@ -105,12 +113,6 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
     updateCartBadge();
-
-    document.getElementById('contact-form').addEventListener('submit', (event) => {
-      event.preventDefault();
-      document.getElementById('contact-feedback').textContent = 'Thanks for reaching out! We will be in touch soon.';
-      document.getElementById('contact-form').reset();
-    });
   </script>
 </body>
 </html>
