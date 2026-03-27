@@ -12,6 +12,7 @@
     <div class="container header-inner">
       <a class="brand" href="../index.html">
         <img class="logo" src="../images/logo.png" alt="Mingle and Glow logo" />
+        <h2>Mingle and Glow Cosmetics</h2>
       </a>
       <nav class="main-nav">
         <a href="../index.html">Home</a>
@@ -93,8 +94,13 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <h3>Mingle and Glow Cosmetics</h3>
-        <p>Bringing you personalized skincare and inclusive fragrances for every story.</p>
+        <div class="footer-brand">
+          <img class="footer-logo" src="../images/logo.png" alt="Mingle and Glow logo" />
+          <div>
+            <h3>Mingle and Glow Cosmetics</h3>
+            <p>Bringing you personalized skincare and inclusive fragrances for every story.</p>
+          </div>
+        </div>
       </div>
 
       <div>
@@ -109,14 +115,15 @@
 
       <div>
         <h4>Connect</h4>
-        <p>Email: <a href="mailto:support@mingleandglow.com">support@mingleandglow.com</a></p>
-        <p>Phone: +233 545 850 757</p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:support@mingleandglow.com">support@mingleandglow.com</a></p>
+        <p><i class="fas fa-phone"></i> <a href="tel:+233545850757">+233 545 850 757</a></p>
+        <p><i class="fas fa-map-marker-alt"></i> Ghana, West Africa</p>
         <div class="social-icons">
           <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
           <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
           <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="https://www.whatsapp.com" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
           <a href="https://www.tiktok.com" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="https://wa.me/0545850757" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
         <div class="back-to-home">
           <a href="../index.html" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Back to Home</a>
@@ -132,6 +139,22 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
     updateCartBadge();
+
+    // Footer text click effects
+    const footerHeadings = document.querySelectorAll('.site-footer h3, .site-footer h4');
+    const footerTexts = document.querySelectorAll('.site-footer > div > div > p');
+
+    footerHeadings.forEach(heading => {
+      heading.addEventListener('click', function() {
+        this.classList.toggle('clicked');
+      });
+    });
+
+    footerTexts.forEach(text => {
+      text.addEventListener('click', function() {
+        this.classList.toggle('clicked');
+      });
+    });
   </script>
 </body>
 </html>

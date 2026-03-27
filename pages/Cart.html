@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cart — Mingle and Glow Cosmetics</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <link rel="stylesheet" href="../src/style.css" />
 </head>
 <body data-page="cart">
@@ -11,6 +12,7 @@
     <div class="container header-inner">
       <a class="brand" href="../index.html">
         <img class="logo" src="../images/logo.png" alt="Mingle and Glow logo" />
+        <h2>Mingle and Glow Cosmetics</h2>
       </a>
       <nav class="main-nav">
         <a href="../index.html">Home</a>
@@ -18,7 +20,7 @@
         <a href="Products.html">Products</a>
         <a href="skin-quiz.html">Skin Quiz</a>
         <a href="contact-us.html">Contact Us</a>
-        <a id="auth-action" class="btn btn-primary" href="sign-in.html">Sign In</a>
+        <a id="auth-action" class="btn btn-primary" href="login.html">Login</a>
         <span id="user-greeting" class="user-greeting"></span>
         <a class="btn cart-link" href="Cart.html">Cart <span id="cart-count" class="badge">0</span></a>
       </nav>
@@ -67,7 +69,12 @@
                 <option value="Credit Card">Credit Card</option>
                 <option value="PayPal">PayPal</option>
                 <option value="Apple Pay">Apple Pay</option>
+                <option value="Momo">Mobile Money (Momo) - 0545850757</option>
               </select>
+            </div>
+            <div id="momo-info" class="form-info" style="display: none;">
+              <p><strong>Momo Payment Number:</strong> 0545850757</p>
+              <p>Please complete your payment using this number and your Momo account.</p>
             </div>
             <button class="btn btn-primary" type="submit">Place Order</button>
             <p class="privacy-note">We securely handle your payment details. This is a demo implementation.</p>
@@ -80,8 +87,13 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <h3>Mingle and Glow Cosmetics</h3>
-        <p>Bringing you personalized skincare and inclusive fragrances for every story.</p>
+        <div class="footer-brand">
+          <img class="footer-logo" src="../images/logo.png" alt="Mingle and Glow logo" />
+          <div>
+            <h3>Mingle and Glow Cosmetics</h3>
+            <p>Bringing you personalized skincare and inclusive fragrances for every story.</p>
+          </div>
+        </div>
       </div>
 
       <div>
@@ -96,12 +108,15 @@
 
       <div>
         <h4>Connect</h4>
-        <p>Email: <a href="mailto:support@mingleandglow.com">support@mingleandglow.com</a></p>
-        <p>Phone: +233 545 850 757</p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:support@mingleandglow.com">support@mingleandglow.com</a></p>
+        <p><i class="fas fa-phone"></i> <a href="tel:+233545850757">+233 545 850 757</a></p>
+        <p><i class="fas fa-map-marker-alt"></i> Ghana, West Africa</p>
         <div class="social-icons">
-          <a href="#" aria-label="Instagram">📷</a>
-          <a href="#" aria-label="Facebook">📘</a>
-          <a href="#" aria-label="Twitter">🐦</a>
+          <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.tiktok.com" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="https://wa.me/0545850757" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
     </div>
@@ -114,6 +129,34 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
     updateCartBadge();
+
+    // Show/hide Momo payment info
+    const paymentSelect = document.getElementById('payment');
+    const momoInfo = document.getElementById('momo-info');
+    
+    paymentSelect.addEventListener('change', () => {
+      if (paymentSelect.value === 'Momo') {
+        momoInfo.style.display = 'block';
+      } else {
+        momoInfo.style.display = 'none';
+      }
+    });
+
+    // Footer text click effects
+    const footerHeadings = document.querySelectorAll('.site-footer h3, .site-footer h4');
+    const footerTexts = document.querySelectorAll('.site-footer > div > div > p');
+
+    footerHeadings.forEach(heading => {
+      heading.addEventListener('click', function() {
+        this.classList.toggle('clicked');
+      });
+    });
+
+    footerTexts.forEach(text => {
+      text.addEventListener('click', function() {
+        this.classList.toggle('clicked');
+      });
+    });
   </script>
 </body>
 </html>
