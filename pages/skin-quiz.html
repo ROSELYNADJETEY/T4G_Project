@@ -138,6 +138,62 @@
         this.classList.toggle('clicked');
       });
     });
+
+    document.getElementById("quiz-form").addEventListener("submit", function (e) {
+  e.preventDefault(); // stop page refresh
+
+  // Get answers
+  const q1 = document.querySelector('input[name="q1"]:checked').value;
+  const q2 = document.querySelector('input[name="q2"]:checked').value;
+  const q3 = document.querySelector('input[name="q3"]:checked').value;
+  const q4 = document.querySelector('input[name="q4"]:checked').value;
+
+  let result = "";
+
+  // Simple logic to determine skin type
+  if (q1 === "Tight/dry" && q2 === "Rarely") {
+    result = "Dry Skin";
+  } 
+  else if (q1 === "Oily" || q2 === "Frequently") {
+    result = "Oily Skin";
+  } 
+  else if (q1 === "Combination") {
+    result = "Combination Skin";
+  } 
+  else {
+    result = "Normal Skin";
+  }
+
+  // Add extra recommendation
+  let recommendation = "";
+
+  if (result === "Dry Skin") {
+    recommendation = "Use hydrating creams and avoid harsh cleansers.";
+  } else if (result === "Oily Skin") {
+    recommendation = "Use oil-free products and gentle cleansers.";
+  } else if (result === "Combination Skin") {
+    recommendation = "Use balanced skincare for both dry and oily areas.";
+  } else {
+    recommendation = "Maintain your routine with gentle skincare products.";
+  }
+
+  // Display result in the div
+  const resultDiv = document.getElementById("quiz-result");
+
+  resultDiv.innerHTML = `
+    <h2>Your Skin Type: ${result}</h2>
+    <p>${recommendation}</p>
+  `;
+
+  resultDiv.style.display = "block";
+
+    // ✅ Smooth scroll to result
+  resultDiv.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+
+});
   </script>
 </body>
 </html>
