@@ -1678,3 +1678,24 @@ a {
   }
 
 }
+
+/* Quantity controls for cart page */
+.qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.qty-controls button {
+  padding: 5px 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.qty-controls span {
+  font-weight: bold;
+}
