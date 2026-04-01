@@ -1,79 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Products — Mingle and Glow Cosmetics</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-  <link rel="stylesheet" href="../src/style.css" />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="../src/style.css">
 </head>
-<body data-page="products">
+
+<body>
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="../index.html">
         <img class="logo" src="../images/logo.png" alt="Mingle and Glow logo" />
         <h2>Mingle and Glow Cosmetics</h2>
       </a>
+      <!-- <h2>Mingle and Glow Cosmetics</h2> -->
+
       <nav class="main-nav">
         <a href="../index.html">Home</a>
-        <a href="about-us.html">About Us</a>
-        <a href="Products.html" class="active">Products</a>
+        <a href="about-us.html">About</a>
+        <a href="products.html" class="active">Products</a>
         <a href="skin-quiz.html">Skin Quiz</a>
-        <a href="contact-us.html">Contact Us</a>
-        <a id="auth-action" class="btn btn-primary" href="login.html">Login</a>
-        <span id="user-greeting" class="user-greeting"></span>
-        <a class="btn cart-link" href="Cart.html">Cart <span id="cart-count" class="badge">0</span></a>
+        <a href="contact-us.html">Contact</a>
+        <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
       </nav>
-      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
     </div>
   </header>
 
-  <main class="page-content">
-    <section class="page-header">
-      <div class="container">
-        <h1>Shop Our Products</h1>
-        <p>Explore skincare and perfume collections with filters that help you find what’s right for you.</p>
-      </div>
-    </section>
+  <main>
+    <h1>Shop Our Products</h1>
+    <h4>Discover our range of personalized skincare and inclusive fragrances</h4>
+    <div class="shop-container">
 
-    <section class="product-filters">
-      <div class="container filter-grid">
-        <div class="filter">
-          <label for="filter-category">Product Category</label>
-          <select id="filter-category" class="filter-select"></select>
-        </div>
-        <div class="filter">
-          <label for="filter-skin-type">Skin Type</label>
-          <select id="filter-skin-type" class="filter-select"></select>
-        </div>
-        <div class="filter">
-          <label for="filter-fragrance-type">Fragrance Type</label>
-          <select id="filter-fragrance-type" class="filter-select"></select>
-        </div>
-        <div class="filter">
-          <label for="filter-brand">Brand</label>
-          <select id="filter-brand" class="filter-select"></select>
-        </div>
-        <div class="filter">
-          <label for="filter-price">Price Range</label>
-          <select id="filter-price" class="filter-select">
-            <option value="All">All Prices</option>
-            <option value="0-25">Under $25</option>
-            <option value="25-45">$25–45</option>
-            <option value="45-100">$45+</option>
-          </select>
-        </div>
-      </div>
-    </section>
+    <!-- FILTERS -->
+    <div class="filters">
+      <select id="filter-category" class="filter-select"></select>
+      <select id="filter-skin-type" class="filter-select"></select>
+      <select id="filter-fragrance-type" class="filter-select"></select>
+      <select id="filter-brand" class="filter-select"></select>
+      
+      <select id="filter-price" class="filter-select">
+        <option value="All">All Prices</option>
+        <option value="0-25">Under $25</option>
+        <option value="25-45">$25–45</option>
+        <option value="45-100">$45+</option>
+      </select>
+    </div>
 
-    <section class="products-grid">
-      <div class="container">
-        <div id="product-list" class="product-grid"></div>
-      </div>
-    </section>
+    <!-- PRODUCTS -->
+    <div id="product-list" class="product-grid"></div>
+    </div>
   </main>
 
-  <footer class="site-footer">
+<footer class="site-footer">
     <div class="container footer-grid">
       <div>
         <div class="footer-brand">
@@ -88,10 +68,10 @@
       <div>
         <h4>Quick Links</h4>
         <ul class="footer-links">
-          <li><a href="About%20us%20.html">About</a></li>
-          <li><a href="Contact%20us%20.html">Contact</a></li>
-          <li><a href="Products.html">Shop</a></li>
-          <li><a href="Skin%20Quiz%20.html">Skin Quiz</a></li>
+          <li><a href="pages/About%20us%20.html">About</a></li>
+          <li><a href="pages/Contact%20us%20.html">Contact</a></li>
+          <li><a href="pages/Products.html">Shop</a></li>
+          <li><a href="pages/Skin%20Quiz%20.html">Skin Quiz</a></li>
         </ul>
       </div>
 
@@ -114,26 +94,7 @@
     </div>
   </footer>
 
+
   <script src="../src/app.js"></script>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    updateCartBadge();
-
-    // Footer text click effects
-    const footerHeadings = document.querySelectorAll('.site-footer h3, .site-footer h4');
-    const footerTexts = document.querySelectorAll('.site-footer > div > div > p');
-
-    footerHeadings.forEach(heading => {
-      heading.addEventListener('click', function() {
-        this.classList.toggle('clicked');
-      });
-    });
-
-    footerTexts.forEach(text => {
-      text.addEventListener('click', function() {
-        this.classList.toggle('clicked');
-      });
-    });
-  </script>
 </body>
 </html>
